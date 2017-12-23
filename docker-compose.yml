@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  notebook:
+    build: .
+    image: mattjtodd/winemag-data-jupyter
+    environment:
+      - SPARK_OPTS="--driver-memory=6G"
+    ports:
+      - 8888:8888
+    command: start-notebook.sh --NotebookApp.token=''
+    volumes:
+      - type: bind
+        source: ./work
+        target: /home/jovyan/work
+
