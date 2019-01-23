@@ -2,7 +2,6 @@ version: '3.4'
 
 services:
   notebook:
-    build: .
     image: jupyter/all-spark-notebook:2c80cf3537ca
     environment:
       - SPARK_OPTS="--driver-memory=6G"
